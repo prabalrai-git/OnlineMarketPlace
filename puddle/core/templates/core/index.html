@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Puddle</title>
-  </head>
-  <body></body>
-</html>
+{% extends 'core/base.html' %} 
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+  <h2 class="mb-12 text-2xl text-center">
+    Newest Items
+  </h2>
+  <div class="grid grid-cols-3 gap-3">
+    {% for item in items %}
+<p>{{item.Name}}</p>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}
